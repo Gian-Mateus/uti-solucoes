@@ -17,7 +17,7 @@ class card extends Component
         public string $svg
     )
     {
-        //
+        
     }
 
     /**
@@ -25,6 +25,6 @@ class card extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.page.card');
+        return view('components.page.card', ['cards' => $cards]);
     }
 }
