@@ -1,4 +1,4 @@
-<section class="hero bg-base-200 min-h-screen px-12">
+<section class="hero bg-base-100 min-h-screen px-12">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img
         src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
@@ -7,7 +7,7 @@
       <div class="max-w-2/3">
         <h1 class="text-7xl font-bold text-primary mb-8">Seu parceiro de TI confiável</h1>
         <p class="py-6 text-2xl mb-8">
-            Na UTI Soluções em TI, nos orgulhamos de oferecer serviços de TI de alta qualidade, personalizados para atender às necessidades únicas de cada cliente. Com anos de experiência e compromisso com a excelência, nossa equipe de técnicos certificados está pronta para enfrentar qualquer desafio de TI, grande ou pequeno.
+            Na UTI Soluções em TI, nos orgulhamos de oferecer serviços de TI de alta qualidade, personalizados para atender às necessidades únicas de cada cliente. Com anos de experiência e compromisso com a excelência, nossa equipe de técnicos certificados está pronta para enfrentar qualquer desafio de TI.
             Acreditamos em soluções proativas, comunicação transparente e na construção de parcerias duradouras.
         </p>
         <button class="btn btn-primary btn-xl gap-4">

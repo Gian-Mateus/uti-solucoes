@@ -1,4 +1,4 @@
-<section class="hero bg-base-200 min-h-screen">
+<section class="hero bg-base-300 min-h-screen">
     <div class="hero-content text-center">
       <div class="max-w-4xl">
         <h1 class="text-7xl font-bold text-primary mb-8">Soluções de TI especializadas para o seu negócio</h1>

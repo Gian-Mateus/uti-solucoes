@@ -54,6 +54,7 @@
                 @include('page/contact')
                 @include('page/services')
                 @include('page/why')
+                @include('page/ready')
                 @include('page/footer')
             </main>
         </div>
