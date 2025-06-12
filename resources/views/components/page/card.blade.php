@@ -5,8 +5,8 @@
     </div>
     <figure>
       <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes" />
+        src="{{ $src }}"
+        alt="" />
     </figure>
     <div class="card-body">
       <p>{{ $content }}</p>

@@ -14,7 +14,8 @@ class card extends Component
     public function __construct(
         public string $title,
         public string $content,
-        public string $svg
+        public string $svg,
+        public string $src
     )
     {
         
