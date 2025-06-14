@@ -27,3 +27,7 @@ Route::get('/', function () {
     ];
     return view('welcome', ['cards' => $cards]);
 });
+
+Route::get('/contato', function(){
+
+});
