@@ -50,13 +50,7 @@
         </header>
         <div class="flex w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex w-full flex-col">
-                @include('page/hero')
-                @include('page/about')
-                @include('page/services')
-                @include('page/clients')
-                @include('page/why')
-                @include('page/ready')
-                @include('page/footer')
+                Teste
             </main>
         </div>
 

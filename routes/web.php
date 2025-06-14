@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TicketsController;
 
 Route::get('/', function () {
     $cards = [
@@ -28,6 +29,4 @@ Route::get('/', function () {
     return view('welcome', ['cards' => $cards]);
 });
 
-Route::get('/contato', function(){
-
-});
+Route::get('/contato', [TicketsController::class, 'index'])->name('contact');
