@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
     </head>
     <body class="bg-base flex items-center lg:justify-center min-h-screen flex-col font-sans">
         <header class="w-full text-sm not-has-[nav]:hidden">
-            <nav class="navbar bg-base-100 shadow-sm px-12">
+            <nav class="navbar bg-base-100 shadow-sm md:px-12">
                 <div class="navbar-start">
                   <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -25,18 +25,18 @@
                     <ul
                       tabindex="0"
                       class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                      <li><a class="btn btn-soft text-primary">Serviços</a></li>
+                      <li><a href="#services" class="btn btn-soft text-primary">Serviços</a></li>
                       <li><a class="btn btn-ghost btn-primary">Ticket</a></li>
                     </ul>
                   </div>
                     <a class="text-xl flex items-center cursor-pointer">
                         <img class="w-10 h-auto" src="/logo.png" alt="Logo UTI Soluções">
-                        <span class="text-primary text-2xl font-bold ml-2">UTI Soluções</span>
+                        <span class="text-primary text-xl md:text-2xl font-bold ml-2">UTI Soluções</span>
                     </a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                   <ul class="menu menu-horizontal px-1 gap-4">
-                    <li><a class="btn btn-soft text-primary">Serviços</a></li>
+                    <li><a href="#services" class="btn btn-soft text-primary">Serviços</a></li>
                     <li><a class="btn btn-ghost btn-primary">Ticket</a></li>
                   </ul>
                 </div>
@@ -53,6 +53,7 @@
                 @include('page/hero')
                 @include('page/about')
                 @include('page/services')
+                @include('page/clients')
                 @include('page/why')
                 @include('page/ready')
                 @include('page/footer')

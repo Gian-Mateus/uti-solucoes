@@ -17,6 +17,14 @@ return new class extends Migration
             $table->string('cnpj', 14)->nullable();
             $table->string('cpf', 11)->nullable();
             $table->string('zipcode', 8);
+            $table->string('adress', 255);
+            $table->string('number', 10);
+            $table->string("district", 255);
+            $table->string("city", 255);
+            $table->string("state", 2);
+            $table->string("email", 255);
+            $table->string("phone");
+            $table->boolean('is_whats');
         });
     }
 

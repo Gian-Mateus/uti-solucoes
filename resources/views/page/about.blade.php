@@ -1,14 +1,14 @@
-<section class="hero bg-base-100 min-h-screen px-12" id="about">
+<section class="hero bg-base-100 min-h-screen px-4 md:px-12" id="about">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img
-        src="/Gemini_Generated_Image_3racbi3racbi3rac.png"
-        class="max-w-sm rounded-lg shadow-2xl"
+ src="/Gemini_Generated_Image_3racbi3racbi3rac.png"
+ class="max-w-sm rounded-lg shadow-2xl w-full md:max-w-sm"
       />
-      <div class="max-w-2/3">
-        <h1 class="text-7xl font-bold text-primary mb-8">Seu parceiro de TI confiável</h1>
-        <p class="py-6 text-2xl mb-8">
-            Na UTI Soluções em TI, nos orgulhamos de oferecer serviços de TI de alta qualidade, personalizados para atender às necessidades únicas de cada cliente. Com anos de experiência e compromisso com a excelência, nossa equipe de técnicos certificados está pronta para enfrentar qualquer desafio de TI.
-            Acreditamos em soluções proativas, comunicação transparente e na construção de parcerias duradouras.
+      <div class="max-w-full lg:max-w-2/3 text-center lg:text-left">
+        <h1 class="text-4xl md:text-7xl font-bold text-primary mb-4 md:mb-8">Seu parceiro de TI confiável</h1>
+        <p class="py-6 text-lg md:text-2xl mb-4 md:mb-8">
+          Na UTI Soluções em TI, nos orgulhamos de oferecer serviços de TI de alta qualidade, personalizados para atender às necessidades únicas de cada cliente. Com anos de experiência e compromisso com a excelência, nossa equipe de técnicos certificados está pronta para enfrentar qualquer desafio de TI.
+          Acreditamos em soluções proativas, comunicação transparente e na construção de parcerias duradouras.
         </p>
         <button class="btn btn-primary btn-xl gap-4">
             <span>Contato</span>
