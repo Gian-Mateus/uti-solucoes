@@ -11,7 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('inventory', function(Blueprint $table){
+            $table->id();
+            $table->string('name_micro');
+            $table->string('type_os', 50);
+            $table->string('cpu', 50);
+            $table->interger('ram'); // 4, 8, 16, 32
+            $table->string('memory', 50); // HD 500GB, SSD 250GB, NVME 500GB
+            $table->string('sector', 50); //Almoxarifado, Administrativo, Financeiro
+        });
     }
 
     /**
@@ -19,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('inventory');
     }
 };

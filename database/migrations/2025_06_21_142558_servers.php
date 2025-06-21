@@ -11,7 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('servers', function(Blueprint $table){
+            $table->id();
+            $table->string('name'); // SERVER-AD
+            $table->string('domain', 50);
+            $table->string('netbios', 50); // SERVER-AD
+            $table->string('os', 50);
+            $table->string('ip_address', 50);
+            $table->string('gateway', 50);
+            $table->string('dns', 50);
+            $table->string('hostname', 50); // SERVER-AD.EMPRESA.LOCAL
+        });
     }
 
     /**
@@ -19,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('servers');
     }
 };
