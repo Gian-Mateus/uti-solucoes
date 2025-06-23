@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::table('data_client', function (Blueprint $table) {
             //
+            $table->foreignId('server_id')
+                    ->references('id')
+                    ->on('servers')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
         });
     }
 
@@ -23,6 +28,8 @@ return new class extends Migration
     {
         Schema::table('data_client', function (Blueprint $table) {
             //
+            $table->dropForeign(['server_id']);
+            $table->dropColumn('server_id');
         });
     }
 };

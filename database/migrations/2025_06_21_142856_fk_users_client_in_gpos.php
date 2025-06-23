@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::table('gpos', function (Blueprint $table) {
             //
+            $table->foreignId('user_client_id')
+                    ->references('id')
+                    ->on('users_client')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
         });
     }
 
@@ -23,6 +28,8 @@ return new class extends Migration
     {
         Schema::table('gpos', function (Blueprint $table) {
             //
+            $table->dropForeign(['user_client_id']);
+            $table->dropColumn('user_client_id');
         });
     }
 };
