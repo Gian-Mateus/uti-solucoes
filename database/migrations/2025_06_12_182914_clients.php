@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string("district", 255);
             $table->string("city", 255);
             $table->string("state", 2);
-            $table->array("emails");
+            $table->json("emails");
             /* 
-                emails = [
-                    "contato" => "Fulano de tal,
-                    "email" => "fulanodetal@empresa.com.br"
-                ]
+                "emails": [{
+                    "contato": "Fulano de tal,
+                    "email": "fulanodetal@empresa.com.br"
+                }]
             */
             $table->array("phones");
             /*
