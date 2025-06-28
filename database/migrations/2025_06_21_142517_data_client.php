@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_clients', function(Blueprint $table){
             $table->id();
+            $table->string('ip_public', 15);
         });
     }
 

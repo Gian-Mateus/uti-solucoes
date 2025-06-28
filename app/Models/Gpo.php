@@ -10,26 +10,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * Class Client
+ * Class Gpo
  *
  * @property int $id
  * @property string $name
- * @property string $cnpj-cpf
- * @property string $zipcode
- * @property string $adress
- * @property string $number
- * @property string $district
- * @property string $city
- * @property string $state
- * @property string $emails
- * @property string $phones
+ * @property string $roles
  * @property int $data_id
  * @property DataClient $data
- * @property Collection|Backup[] $backups
+ * @property Collection|UsersClient[] $usersClients
  */
-class Client extends Model
+class Gpo extends Model
 {
-    protected $table = 'clients';
+    protected $table = 'gpos';
 
     protected $primaryKey = 'id';
 
@@ -43,15 +35,7 @@ class Client extends Model
     protected $fillable = [
         'id',
         'name',
-        'cnpj-cpf',
-        'zipcode',
-        'adress',
-        'number',
-        'district',
-        'city',
-        'state',
-        'emails',
-        'phones',
+        'roles',
         'data_id',
     ];
 
@@ -71,25 +55,17 @@ class Client extends Model
         return [
             'id' => 'integer',
             'name' => 'string',
-            'cnpj-cpf' => 'string',
-            'zipcode' => 'string',
-            'adress' => 'string',
-            'number' => 'string',
-            'district' => 'string',
-            'city' => 'string',
-            'state' => 'string',
-            'emails' => 'string',
-            'phones' => 'string',
+            'roles' => 'string',
             'data_id' => 'integer',
         ];
     }
 
     /**
-     * @return HasMany<Backup, $this>
+     * @return HasMany<UsersClient, $this>
      */
-    public function backups(): HasMany
+    public function usersClients(): HasMany
     {
-        return $this->hasMany(Backup::class, 'client_id', 'id');
+        return $this->hasMany(UsersClient::class, 'gpo_id', 'id');
     }
 
     /**

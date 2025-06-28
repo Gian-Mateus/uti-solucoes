@@ -22,17 +22,17 @@ return new class extends Migration
             $table->string("city", 255);
             $table->string("state", 2);
             $table->string('email', 55)->nullable();
-            $table->array("phones"); 
+            $table->json("phones"); 
             /*
-            phones = [
-                [
-                    "phone" => '4733328676', 
-                    "whatsApp" => true
-                ], 
-                [
-                    "phone" => '4733328676', 
-                    "whatsApp" => false
-                ]
+            "phones": [
+                {
+                    "phone": '4733328676', 
+                    "whatsApp": true
+                }, 
+                {
+                    "phone": '4733328676', 
+                    "whatsApp": false
+                }
             ] 
             */
         });

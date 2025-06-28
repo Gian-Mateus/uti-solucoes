@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('data_client', function (Blueprint $table) {
+        Schema::table('users_client', function (Blueprint $table) {
             //
-            $table->foreignId('server_id')
+            $table->foreignId('gpo_id')
                     ->references('id')
-                    ->on('servers')
+                    ->on('gpos')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
         });
@@ -26,10 +26,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('data_client', function (Blueprint $table) {
+        Schema::table('users_client', function (Blueprint $table) {
             //
-            $table->dropForeign(['server_id']);
-            $table->dropColumn('server_id');
+            $table->dropForeign(['gpo_id']);
+            $table->dropColumn('gpo_id');
         });
     }
 };

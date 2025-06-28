@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('description', 255);
-            $table->timestamp('finished_at');
-            $table->string('resolution');
+            $table->timestamp('finished_at')->nullable();
+            $table->text('resolution')->nullable();
             $table->timestamps();
         });
     }

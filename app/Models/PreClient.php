@@ -11,11 +11,15 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $name
- * @property string|null $cnpj
- * @property string|null $cpf
+ * @property string $cnpj-cpf
+ * @property string $zipcode
+ * @property string $adress
+ * @property string $number
+ * @property string $district
+ * @property string $city
+ * @property string $state
  * @property string|null $email
- * @property string $phone
- * @property bool $is_whats
+ * @property string $phones
  */
 class PreClient extends Model
 {
@@ -33,11 +37,15 @@ class PreClient extends Model
     protected $fillable = [
         'id',
         'name',
-        'cnpj',
-        'cpf',
+        'cnpj-cpf',
+        'zipcode',
+        'adress',
+        'number',
+        'district',
+        'city',
+        'state',
         'email',
-        'phone',
-        'is_whats',
+        'phones',
     ];
 
     /**
@@ -56,11 +64,15 @@ class PreClient extends Model
         return [
             'id' => 'integer',
             'name' => 'string',
-            'cnpj' => 'string',
-            'cpf' => 'string',
+            'cnpj-cpf' => 'string',
+            'zipcode' => 'string',
+            'adress' => 'string',
+            'number' => 'string',
+            'district' => 'string',
+            'city' => 'string',
+            'state' => 'string',
             'email' => 'string',
-            'phone' => 'string',
-            'is_whats' => 'boolean',
+            'phones' => 'string',
         ];
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('domain', 50);
             $table->string('netbios', 50); // SERVER-AD
             $table->string('os', 50);
-            $table->string('ip_address', 50);
+            $table->string('ip_address', 15);
             $table->string('gateway', 50);
             $table->string('dns', 50);
             $table->string('hostname', 50); // SERVER-AD.EMPRESA.LOCAL

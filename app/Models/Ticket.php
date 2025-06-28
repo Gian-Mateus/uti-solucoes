@@ -4,17 +4,23 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * Class Ticket
  *
  * @property int $id
- * @property string $name
+ * @property string $title
  * @property string $description
- * @property int $client_id
- * @property Client $client
+ * @property Carbon|null $finished_at
+ * @property string|null $resolution
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string $ticketable_type
+ * @property int $ticketable_id
  */
 class Ticket extends Model
 {
@@ -22,7 +28,7 @@ class Ticket extends Model
 
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.
@@ -31,9 +37,12 @@ class Ticket extends Model
      */
     protected $fillable = [
         'id',
-        'name',
+        'title',
         'description',
-        'client_id',
+        'finished_at',
+        'resolution',
+        'ticketable_type',
+        'ticketable_id',
     ];
 
     /**
@@ -51,17 +60,30 @@ class Ticket extends Model
     {
         return [
             'id' => 'integer',
-            'name' => 'string',
+            'title' => 'string',
             'description' => 'string',
-            'client_id' => 'integer',
+            'finished_at' => 'datetime',
+            'resolution' => 'string',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'ticketable_type' => 'string',
+            'ticketable_id' => 'integer',
         ];
     }
 
     /**
-     * @return BelongsTo<Client, $this>
+     * @return MorphTo<Model, $this>
      */
-    public function client(): BelongsTo
+    public function ticketable(): MorphTo
     {
-        return $this->belongsTo(Client::class, 'client_id');
+        return $this->morphTo(__FUNCTION__, 'ticketable_type', 'ticketable_id');
+    }
+
+    /**
+     * @return MorphMany<Ticket, $this>
+     */
+    public function tickets(): MorphMany
+    {
+        return $this->morphMany(Ticket::class, 'ticketable');
     }
 }

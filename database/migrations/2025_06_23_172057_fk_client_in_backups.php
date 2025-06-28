@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('data_client', function (Blueprint $table) {
+        Schema::table('backups', function (Blueprint $table) {
             //
-            $table->foreignId('inventory_id')
+            $table->foreignId('client_id')
                     ->references('id')
-                    ->on('inventory')
+                    ->on('clients')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
         });
@@ -26,10 +26,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('data_client', function (Blueprint $table) {
+        Schema::table('backups', function (Blueprint $table) {
             //
-            $table->dropForeign(['inventory_id']);
-            $table->dropColumn('inventory_id');
+            $table->dropForeign(['client_id']);
+            $table->dropColumn('client_id');
         });
     }
 };

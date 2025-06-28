@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gpos', function(Blueprint $table){
-            $table->id();
-            $table->string('name');
-            $table->json('roles');
+        Schema::table('tickets', function (Blueprint $table) {
+            //
+            $table->morphs('ticketable');
         });
     }
 
@@ -23,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gpos');
+        Schema::table('tickets', function (Blueprint $table) {
+            //
+            $table->dropMorphs('ticketable');
+        });
     }
 };
