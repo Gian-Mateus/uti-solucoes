@@ -5,10 +5,6 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-@plugin "daisyui"{
-    themes: uti;
-}
-
 @plugin "daisyui/theme" {
     name: "uti";
     default: true;
@@ -46,4 +42,35 @@
 
 @theme {
     --font-sans: 'Space Grotesk', sans-serif;
+}
+
+
+
+/**
+    The lines above are intact.
+    The lines below were added by maryUI installer.
+*/
+
+/** daisyUI */
+@plugin "daisyui" {
+    themes: uti --default;
+}
+
+/* maryUI */
+@source "../../vendor/robsontenorio/mary/src/View/Components/**/*.php";
+
+/* Theme toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/**
+* Paginator - Traditional style
+* Because Laravel defaults does not match well the design of daisyUI.
+*/
+
+.mary-table-pagination span[aria-current="page"] > span {
+    @apply bg-primary text-base-100
+}
+
+.mary-table-pagination button {
+    @apply cursor-pointer
 }

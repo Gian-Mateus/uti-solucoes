@@ -29,7 +29,7 @@
                       <li><a href="{{ route('contact') }}" class="btn btn-ghost btn-primary">Ticket</a></li>
                     </ul>
                   </div>
-                    <a class="text-xl flex items-center cursor-pointer">
+                    <a href="/" class="text-xl flex items-center cursor-pointer">
                         <img class="w-10 h-auto" src="/logo.png" alt="Logo UTI Soluções">
                         <span class="text-primary text-xl md:text-2xl font-bold ml-2">UTI Soluções</span>
                     </a>
