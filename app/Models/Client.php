@@ -78,8 +78,8 @@ class Client extends Model
             'district' => 'string',
             'city' => 'string',
             'state' => 'string',
-            'emails' => 'string',
-            'phones' => 'string',
+            'emails' => 'array',
+            'phones' => 'array',
             'data_id' => 'integer',
         ];
     }

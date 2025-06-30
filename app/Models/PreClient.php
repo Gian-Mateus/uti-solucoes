@@ -71,8 +71,8 @@ class PreClient extends Model
             'district' => 'string',
             'city' => 'string',
             'state' => 'string',
-            'email' => 'string',
-            'phones' => 'string',
+            'email' => 'array',
+            'phones' => 'array',
         ];
     }
 }

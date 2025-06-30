@@ -49,7 +49,7 @@ class Email extends Model
     {
         return [
             'id' => 'integer',
-            'providers' => 'string',
+            'providers' => 'array',
             'data_id' => 'integer',
         ];
     }

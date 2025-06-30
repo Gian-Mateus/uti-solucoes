@@ -9,4 +9,8 @@ class TicketsController extends Controller
     public function index(){
         return view('contact');
     }
+
+    public function save(){
+        return dd();
+    }
 }
