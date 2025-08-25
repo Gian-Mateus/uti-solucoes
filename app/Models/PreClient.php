@@ -25,6 +25,11 @@ class PreClient extends Model
 {
     protected $table = 'pre-client';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;
@@ -71,8 +76,8 @@ class PreClient extends Model
             'district' => 'string',
             'city' => 'string',
             'state' => 'string',
-            'email' => 'array',
-            'phones' => 'array',
+            'email' => 'string',
+            'phones' => 'string',
         ];
     }
 }

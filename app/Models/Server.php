@@ -26,6 +26,11 @@ class Server extends Model
 {
     protected $table = 'servers';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;

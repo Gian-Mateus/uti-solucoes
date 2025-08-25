@@ -23,6 +23,11 @@ class DataClient extends Model
 {
     protected $table = 'data_clients';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;

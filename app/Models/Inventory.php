@@ -24,6 +24,11 @@ class Inventory extends Model
 {
     protected $table = 'inventory';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;

@@ -26,6 +26,11 @@ class Ticket extends Model
 {
     protected $table = 'tickets';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = true;

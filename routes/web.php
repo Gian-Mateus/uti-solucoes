@@ -30,3 +30,5 @@ Route::get('/', function () {
 });
 
 Route::get('/contato', [TicketsController::class, 'index'])->name('contact');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');

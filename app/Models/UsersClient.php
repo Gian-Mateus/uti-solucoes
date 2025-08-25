@@ -19,6 +19,11 @@ class UsersClient extends Model
 {
     protected $table = 'users_client';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;

@@ -17,6 +17,11 @@ class CacheLock extends Model
 {
     protected $table = 'cache_locks';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'key';
 
     public $incrementing = false;

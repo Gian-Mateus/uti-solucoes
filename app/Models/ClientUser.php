@@ -6,21 +6,26 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * Class Backup
+ * Class ClientUser
  *
  * @property int $id
- * @property Carbon $verified_at
- * @property string $obs
- * @property string $flag
  * @property int $client_id
+ * @property string $name
+ * @property string $email
+ * @property Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property Client $client
  */
-class Backup extends Model
+class ClientUser extends Authenticatable
 {
-    protected $table = 'backups';
+    protected $table = 'client_users';
 
     /**
      * @var string
@@ -29,7 +34,7 @@ class Backup extends Model
 
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.
@@ -38,10 +43,12 @@ class Backup extends Model
      */
     protected $fillable = [
         'id',
-        'verified_at',
-        'obs',
-        'flag',
         'client_id',
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -52,6 +59,10 @@ class Backup extends Model
     protected $attributes = [
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+
     /**
      * @return array<string, string>
      */
@@ -59,10 +70,14 @@ class Backup extends Model
     {
         return [
             'id' => 'integer',
-            'verified_at' => 'datetime',
-            'obs' => 'string',
-            'flag' => 'string',
             'client_id' => 'integer',
+            'name' => 'string',
+            'email' => 'string',
+            'email_verified_at' => 'datetime',
+            'password' => 'string',
+            'remember_token' => 'string',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
         ];
     }
 

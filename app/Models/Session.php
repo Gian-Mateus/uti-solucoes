@@ -20,6 +20,11 @@ class Session extends Model
 {
     protected $table = 'sessions';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $incrementing = false;

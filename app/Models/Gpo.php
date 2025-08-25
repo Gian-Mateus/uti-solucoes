@@ -23,6 +23,11 @@ class Gpo extends Model
 {
     protected $table = 'gpos';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;

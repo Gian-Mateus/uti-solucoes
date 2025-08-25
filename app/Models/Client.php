@@ -26,10 +26,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $data_id
  * @property DataClient $data
  * @property Collection|Backup[] $backups
+ * @property Collection|ClientUser[] $clientUsers
  */
 class Client extends Model
 {
     protected $table = 'clients';
+
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
 
     protected $primaryKey = 'id';
 
@@ -78,8 +84,8 @@ class Client extends Model
             'district' => 'string',
             'city' => 'string',
             'state' => 'string',
-            'emails' => 'array',
-            'phones' => 'array',
+            'emails' => 'string',
+            'phones' => 'string',
             'data_id' => 'integer',
         ];
     }
@@ -90,6 +96,14 @@ class Client extends Model
     public function backups(): HasMany
     {
         return $this->hasMany(Backup::class, 'client_id', 'id');
+    }
+
+    /**
+     * @return HasMany<ClientUser, $this>
+     */
+    public function clientUsers(): HasMany
+    {
+        return $this->hasMany(ClientUser::class, 'client_id', 'id');
     }
 
     /**

@@ -24,6 +24,11 @@ class JobBatch extends Model
 {
     protected $table = 'job_batches';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $incrementing = false;

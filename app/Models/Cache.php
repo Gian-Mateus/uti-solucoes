@@ -17,6 +17,11 @@ class Cache extends Model
 {
     protected $table = 'cache';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'key';
 
     public $incrementing = false;

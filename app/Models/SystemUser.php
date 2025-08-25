@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * Class User
+ * Class SystemUser
  *
  * @property int $id
  * @property string $name
@@ -19,9 +20,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-class User extends Authenticatable
+class SystemUser extends Authenticatable
 {
-    protected $table = 'users';
+    protected $table = 'system_users';
+
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
 
     protected $primaryKey = 'id';
 

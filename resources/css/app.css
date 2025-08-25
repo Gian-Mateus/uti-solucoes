@@ -44,8 +44,6 @@
     --font-sans: 'Space Grotesk', sans-serif;
 }
 
-
-
 /**
     The lines above are intact.
     The lines below were added by maryUI installer.
@@ -73,4 +71,9 @@
 
 .mary-table-pagination button {
     @apply cursor-pointer
+}
+
+/* Customization */
+@utility fieldset-legend{
+    @apply text-xl;
 }

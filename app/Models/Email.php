@@ -19,6 +19,11 @@ class Email extends Model
 {
     protected $table = 'emails';
 
+    /**
+     * @var string
+     */
+    protected $connection = 'sqlite';
+
     protected $primaryKey = 'id';
 
     public $timestamps = false;
@@ -49,7 +54,7 @@ class Email extends Model
     {
         return [
             'id' => 'integer',
-            'providers' => 'array',
+            'providers' => 'string',
             'data_id' => 'integer',
         ];
     }
