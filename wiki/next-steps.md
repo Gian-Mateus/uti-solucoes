@@ -1,0 +1,1 @@
+## Criar uma lógica para contrato dos Clientes
