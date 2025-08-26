@@ -1,5 +1,5 @@
 <footer class="bg-base-300">
-    <div class="w-full bg-secondary flex justify-evenly px-10 items-center text-base-content">
+    <div class="w-full bg-base-200 flex justify-evenly px-10 items-center text-base-content">
         <div class="flex font-bold uppercase">
             Nos siga nas redes sociais:
         </div>
@@ -23,7 +23,7 @@
         </ul>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-12 py-10 bg-secondary/50 gap-y-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-12 py-10 bg-base-100 gap-y-4">
         <figure class="w-48 row-span-2 md:row-auto">
             <img src="/logo.png" alt="Logo UTI Soluções">
         </figure>
@@ -111,5 +111,5 @@
         </div>
     </div>
 
-    <span class="text-xs block text-center py-2 bg-secondary/45">© 2025 UTI Soluções em Informática. Todos os direitos reservados.</span>
+    <span class="text-xs block text-center py-2 bg-base-100">© 2025 UTI Soluções em Informática. Todos os direitos reservados.</span>
 </footer>

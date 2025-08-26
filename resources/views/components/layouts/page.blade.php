@@ -14,11 +14,10 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-base flex items-center lg:justify-center min-h-screen flex-col font-sans">
-    <header class="text-primary text-4xl font-bold p-8 flex gap-4 items-center">
-        <img class="w-24 h-auto" src="/logo.png" alt="Logotipo UTI Soluções em Informática">
-        <h1>Sistema</h1>
-    </header>
-    {{ $slot }}
+<body class="bg-base flex min-h-screen flex-col font-sans">
+    <livewire:components.header />
+    <main class="flex-1 mx-auto">
+        {{ $slot }}
+    </main>
 </body>
 </html>
