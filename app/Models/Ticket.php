@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -21,6 +22,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property Carbon|null $updated_at
  * @property string $ticketable_type
  * @property int $ticketable_id
+ * @property int $responsibleUser
+ * @property SystemUser $systemUser
  */
 class Ticket extends Model
 {
@@ -48,6 +51,7 @@ class Ticket extends Model
         'resolution',
         'ticketable_type',
         'ticketable_id',
+        'responsibleuser',
     ];
 
     /**
@@ -73,7 +77,16 @@ class Ticket extends Model
             'updated_at' => 'datetime',
             'ticketable_type' => 'string',
             'ticketable_id' => 'integer',
+            'responsibleUser' => 'integer',
         ];
+    }
+
+    /**
+     * @return BelongsTo<SystemUser, $this>
+     */
+    public function systemUser(): BelongsTo
+    {
+        return $this->belongsTo(SystemUser::class, 'responsibleUser');
     }
 
     /**
