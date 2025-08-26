@@ -36,10 +36,10 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'system' => [
             'driver' => 'session',
             //'provider' => 'users',
-            'provider' => 'system_users',
+            'provider' => 'systemUsers',
         ],
         'client' => [
             'driver' => 'session',
@@ -65,7 +65,7 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'systemUsers' => [
             'driver' => 'eloquent',
             'model' => App\Models\SystemUser::class,
         ],
