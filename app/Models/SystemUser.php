@@ -5,16 +5,18 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class SystemUser
  *
  * @property int $id
  * @property string $name
+ * @property string $login
  * @property string $email
  * @property Carbon|null $email_verified_at
  * @property string $password
@@ -25,6 +27,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class SystemUser extends Authenticatable
 {
+    use HasFactory;
+    
     protected $table = 'system_users';
 
     /**
@@ -44,6 +48,7 @@ class SystemUser extends Authenticatable
     protected $fillable = [
         'id',
         'name',
+        'login',
         'email',
         'email_verified_at',
         'password',
@@ -70,6 +75,7 @@ class SystemUser extends Authenticatable
         return [
             'id' => 'integer',
             'name' => 'string',
+            'login' => 'string',
             'email' => 'string',
             'email_verified_at' => 'datetime',
             'password' => 'string',

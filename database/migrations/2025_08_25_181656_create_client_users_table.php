@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->constrained()->onDelete('cascade'); // Foreign key to clients table
             $table->string('name');
+            $table->string('login')->unique(); // Pattern: user.corporate
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -7,6 +7,8 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class ClientUser
@@ -14,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $id
  * @property int $client_id
  * @property string $name
+ * @property string $login
  * @property string $email
  * @property Carbon|null $email_verified_at
  * @property string $password
@@ -22,8 +25,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property Carbon|null $updated_at
  * @property Client $client
  */
-class ClientUser extends Model
+class ClientUser extends Authenticatable
 {
+    use HasFactory;
+    
     protected $table = 'client_users';
 
     /**
@@ -44,6 +49,7 @@ class ClientUser extends Model
         'id',
         'client_id',
         'name',
+        'login',
         'email',
         'email_verified_at',
         'password',
@@ -71,6 +77,7 @@ class ClientUser extends Model
             'id' => 'integer',
             'client_id' => 'integer',
             'name' => 'string',
+            'login' => 'string',
             'email' => 'string',
             'email_verified_at' => 'datetime',
             'password' => 'string',
