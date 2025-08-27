@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\LoginClientController;
 use App\Http\Controllers\LoginSystemController;
+use App\Http\Controllers\app\DashboardSystemController;
 
 Route::get('/', function () {
     $cards = [
@@ -39,7 +40,10 @@ Route::get('/esqueceu-a-senha', [LoginClientController::class, 'index'])->name('
 Route::prefix('system')->group(function () {
     Route::name('system.')->group(function () {
         Route::get('/login', [LoginSystemController::class, 'index'])->name('login');
-
-        Route::get('/', [DashboardSystemController::class, 'index'])->name('home');
+        Route::post('/auth', [LoginSystemController::class, 'authenticate'])->name('auth');
+        
+        Route::middleware('auth:system')->group(function () {
+            Route::get('/', [DashboardSystemController::class, 'index'])->name('home');
+        });
     });
 });
