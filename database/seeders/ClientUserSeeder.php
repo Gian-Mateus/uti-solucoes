@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Client;
+use App\Models\ClientUser;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class ClientSeeder extends Seeder
+class ClientUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Client::factory(10)->create();
+        ClientUser::factory(10)->create();
     }
 }
