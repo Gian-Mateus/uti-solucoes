@@ -16,7 +16,8 @@ return new class extends Migration
                     ->references('id')
                     ->on('system_users')
                     ->onUpdate('cascade')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->nullable();
         });
     }
 

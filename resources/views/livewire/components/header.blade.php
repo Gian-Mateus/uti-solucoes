@@ -9,7 +9,7 @@
               tabindex="0"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
               <li><a href="#services" class="btn btn-soft text-primary">Serviços</a></li>
-              <li><a href="{{ route('contact') }}" class="btn btn-ghost btn-primary">Ticket</a></li>
+              <li><a href="{{ route('client.contact') }}" class="btn btn-ghost btn-primary">Ticket</a></li>
             </ul>
           </div>
             <a href="/" class="text-xl flex items-center cursor-pointer">
@@ -20,7 +20,7 @@
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 gap-4">
             <li><a href="#services" class="btn btn-soft text-primary">Serviços</a></li>
-            <li><a href="{{ route('contact') }}" class="btn btn-ghost btn-primary">Ticket</a></li>
+            <li><a href="{{ route('client.contact') }}" class="btn btn-ghost btn-primary">Ticket</a></li>
           </ul>
         </div>
         <div class="navbar-end">

@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('description', 255);
+            $table->enum('priority' ,['low', 'medium', 'high', 'urgent']);
+            $table->timestamp('init_at')->nullable();
             $table->timestamp('finished_at')->nullable();
             $table->text('resolution')->nullable();
+            $table->json('img_paths')->nullable();
             $table->timestamps();
         });
     }

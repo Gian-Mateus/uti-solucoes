@@ -13,19 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
-@unless (Auth::check())
-<body class="bg-base flex items-center lg:justify-center min-h-screen flex-col font-sans">
-    <header class="text-primary text-4xl font-bold p-8 flex gap-4 items-center">
-        <img class="w-24 h-auto" src="/logo.png" alt="Logotipo UTI Soluções em Informática">
-        <h1>Sistema</h1>
-    </header>
-    
-    <main class="flex-1 mx-auto">
-        {{ $slot }}
-    </main>
-</body>
-@endunless
 
 @if(Auth::check())
 <body class="min-h-screen font-sans antialiased bg-base-200">
@@ -66,11 +55,7 @@
                     <x-menu-separator />
                 @endif
  
-                <x-menu-item title="Hello" icon="o-sparkles" link="/" />
-                <x-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />
-                </x-menu-sub>
+                <livewire:client.sidebar-items>
             </x-menu>
         </x-slot:sidebar>
  
@@ -82,6 +67,15 @@
  
     {{-- Toast --}}
     <x-toast />
+
+     {{-- Cropper.js --}}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" />
+  
+     {{-- Sortable.js --}}
+     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.1/Sortable.min.js"></script>
+     
+    @livewireScripts
 </body>
 @endif
 </html>
