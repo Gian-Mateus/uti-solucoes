@@ -75,5 +75,5 @@
 
 /* Customization */
 @utility fieldset-legend{
-    @apply text-xl;
+    @apply text-sm;
 }

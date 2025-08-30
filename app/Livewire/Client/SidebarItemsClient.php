@@ -4,7 +4,7 @@ namespace App\Livewire\Client;
 
 use Livewire\Component;
 
-class SidebarItems extends Component
+class SidebarItemsClient extends Component
 {
     public function render()
     {

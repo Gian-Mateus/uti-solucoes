@@ -1,4 +1,4 @@
-<x-layouts.page>
+<div>
     <div class="mx-auto mt-8 relative">
         <x-header 
             title="Login" 
@@ -6,12 +6,10 @@
             separator
             class="text-primary"
         />
-        <x-form class="mt-10" method="post" action="{{ route('client.auth') }}">
-            @method('POST')
-            @csrf
+        <x-form class="mt-10" wire:submit="authenticate">
             <div class="px-10 grid grid-cols-1 gap-4">
-                <x-input label="Usuário" type="text" icon="o-user" name="login" placeholder="usuario.empresa"/>
-                <x-input label="Senha" type="password" icon="o-key" name="password" placeholder="*******"/>
+                <x-input label="Usuário" type="text" icon="o-user" wire:model="login" placeholder="usuario.empresa"/>
+                <x-input label="Senha" type="password" icon="o-key" wire:model="password" placeholder="*******"/>
                 <x-menu-separator />
                 <x-button type="submit" label="Entrar" class="btn btn-primary"/>
             </div>
@@ -22,4 +20,4 @@
             </a>
         </div>
     </div>
-</x-layouts.page>
+</div>

@@ -15,7 +15,15 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-
+@unless (Auth::check())
+<body class="bg-base flex items-center lg:justify-center min-h-screen flex-col font-sans">
+    <livewire:components.header />
+    
+    <main class="flex-1 mx-auto">
+        {{ $slot }}
+    </main>
+</body>
+@endunless
 @if(Auth::check())
 <body class="min-h-screen font-sans antialiased bg-base-200">
  
@@ -55,7 +63,7 @@
                     <x-menu-separator />
                 @endif
  
-                <livewire:client.sidebar-items>
+                <livewire:client.sidebar-items-client>
             </x-menu>
         </x-slot:sidebar>
  

@@ -1,13 +1,16 @@
 <?php
 
+use App\Livewire\App\LoginSystem;
+use App\Livewire\Client\LoginClient;
+use App\Livewire\App\DashboardSystem;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Client\ContactClient;
+use App\Livewire\Client\TicketsClient;
 use App\Livewire\Client\DashboardClient;
-use App\Http\Controllers\TicketsController;
-use App\Http\Controllers\app\LoginSystemController;
-use App\Http\Controllers\client\LoginClientController;
-use App\Http\Controllers\app\DashboardSystemController;
-use App\Http\Controllers\client\TicketsClientController;
-use App\Http\Controllers\client\DashboardClientController;
+use App\Livewire\App\ForgotPasswordSystem;
+use App\Livewire\Client\TicketsCreateClient;
+use App\Livewire\Client\ForgotPasswordClient;
+
 
 Route::name('client.')->group(function () {
     /* Home */
@@ -38,12 +41,11 @@ Route::name('client.')->group(function () {
     })->name('page');
     
     /* Ticket PreClient */
-    Route::get('/contato', [TicketsController::class, 'index'])->name('contact');
+    Route::get('/contato', ContactClient::class)->name('contact');
     
     /* Login Client */
-    Route::get('/login', [LoginClientController::class, 'index'])->name('login');
-    Route::post('/auth', [LoginClientController::class, 'authenticate'])->name('auth');
-    Route::get('/esqueceu-a-senha', [LoginClientController::class, 'forgotPassword'])->name('forgot-password');
+    Route::get('/login', LoginClient::class)->name('login');
+    Route::get('/esqueceu-a-senha', ForgotPasswordClient::class)->name('forgot-password');
     
     /* App Client */
     Route::prefix('app')->group(function () {
@@ -51,8 +53,9 @@ Route::name('client.')->group(function () {
         Route::middleware('auth:client')->group(function () {
             Route::get('/', DashboardClient::class)->name('home');
             
-            /* Resource Tickets */
-            Route::resource('tickets', TicketsClientController::class);
+            /* Tickets */
+            Route::get('/tickets', TicketsClient::class)->name('tickets');
+            Route::get('/tickets/create', TicketsCreateClient::class)->name('tickets.create');
         });
     });
 });
@@ -61,12 +64,12 @@ Route::name('system.')->group(function () {
     /* App System */
     Route::prefix('system')->group(function () {
         /* Login System */
-        Route::get('/login', [LoginSystemController::class, 'index'])->name('login');
-        Route::post('/auth', [LoginSystemController::class, 'authenticate'])->name('auth');
+        Route::get('/login', LoginSystem::class)->name('login');
+        Route::get('/esqueci-minha-senha', ForgotPasswordSystem::class)->name('forgotPassword');
         
         /* Private System */
         Route::middleware('auth:system')->group(function () {
-            Route::get('/', [DashboardSystemController::class, 'index'])->name('home');
+            Route::get('/', DashboardSystem::class)->name('home');
         });
     });
 });

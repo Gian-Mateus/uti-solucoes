@@ -16,8 +16,12 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property int $id
  * @property string $title
  * @property string $description
+ * @property string $priority
+ * @property string $type
+ * @property Carbon|null $init_at
  * @property Carbon|null $finished_at
  * @property string|null $resolution
+ * @property string|null $imgs
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string $ticketable_type
@@ -47,8 +51,12 @@ class Ticket extends Model
         'id',
         'title',
         'description',
+        'priority',
+        'type',
+        'init_at',
         'finished_at',
         'resolution',
+        'attachments',
         'ticketable_type',
         'ticketable_id',
         'responsibleuser',
@@ -71,8 +79,12 @@ class Ticket extends Model
             'id' => 'integer',
             'title' => 'string',
             'description' => 'string',
+            'priority' => 'string',
+            'type' => 'string',
+            'init_at' => 'datetime',
             'finished_at' => 'datetime',
             'resolution' => 'string',
+            'attachments' => 'array',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'ticketable_type' => 'string',
