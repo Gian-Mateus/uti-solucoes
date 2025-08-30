@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::table('tickets', function (Blueprint $table) {
             $table->foreignId('responsibleUser')
+                    ->nullable()
                     ->references('id')
                     ->on('system_users')
                     ->onUpdate('cascade')
-                    ->onDelete('cascade')
-                    ->nullable();
+                    ->onDelete('cascade');
         });
     }
 
