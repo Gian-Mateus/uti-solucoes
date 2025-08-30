@@ -3,8 +3,9 @@
 namespace App\Livewire\Client;
 
 use App\Models\Ticket;
-use Livewire\Component;
 use Mary\Traits\Toast;
+use Livewire\Component;
+use App\Models\ClientUser;
 use App\Livewire\Forms\client\TicketsCreateForm;
 
 class TicketsCreateClient extends Component
@@ -20,13 +21,19 @@ class TicketsCreateClient extends Component
 
         // Here you would typically handle the file uploads and add the paths to $ticketData
         // For example:
-        // if ($this->form->attachments) {
-        //     $ticketData['attachments'] = collect($this->form->attachments)->map(function($file) {
-        //         return $file->store('attachments');
-        //     })->all();
-        // }
+        if ($this->form->attachments) {
+            $ticketData['attachments'] = collect($this->form->attachments)->map(function($file) {
+                return $file->store('attachments');
+            })->all();
+        }
 
-        Ticket::create($ticketData);
+        $finalData = [
+            ...$ticketData,
+            'ticketable_id' => auth()->id(),
+            'ticketable_type' => ClientUser::class,
+        ];
+
+        Ticket::create($finalData);
 
         $this->success('Ticket criado com sucesso!', redirectTo: route('client.tickets'));
 
